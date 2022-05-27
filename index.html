@@ -5,68 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miner</title>
+    <title>EthMinerDash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="/etherData.js"></script>
 </head>
 
 <body>
     <script>
 
-const getMinerData = async () => {
-    try {
-        await fetch (
-            'http://72.135.11.115:22333/api/v1/status'
-        )
-        .then((res) => res.json())
-        .then((data) => obj = data)
-        console.log(obj.miner.devices[0]);
 
-
-        
-    } catch (error) {
-        console.log('looks like you messed something up');
-    }
-
-    const device1 = obj.miner.devices[0];
-    const device2 = obj.miner.devices[1];
-    const device3 = obj.miner.devices[2];
-    const device4 = obj.miner.devices[3];
-    const device5 = obj.miner.devices[4];
-    const device6 = obj.miner.devices[5];
-    const device7 = obj.miner.devices[6];
-
-
-    document.getElementById("d1").innerHTML = device1.info;
-    document.getElementById("d2").innerHTML = device2.info;
-    document.getElementById("d3").innerHTML = device3.info;
-    document.getElementById("d4").innerHTML = device4.info;
-    document.getElementById("d5").innerHTML = device5.info;
-    document.getElementById("d6").innerHTML = device6.info;
-    document.getElementById("d7").innerHTML = device7.info;
-} 
-
-
-const getEther = async () => {
-    try {
-        await fetch (
-            'https://api.ethermine.org/miner/0xD7bB60e73709780c64c7AC77BA72D89d335ACF0D/currentStats'
-        )
-        .then((res) => res.json())
-        .then((data) => obj = data)
-        console.log(obj.data);
-      
-    } catch (error) {
-        console.log('looks like you messed something up with the Ether');
-    }
-
-    const usdPerDay = obj.data.usdPerMin * 1440;
-    console.log(usdPerDay * 1440);
-    document.getElementById("money").innerHTML = usdPerDay;
-}
-
-
-
-getEther();
-getMinerData();
 
 
     </script>
@@ -79,7 +29,10 @@ getMinerData();
 <p id="d5"></p>
 <p id="d6"></p>
 <p id="d7"></p>
-<div id="money"></div>
+<div id="usdPerDay"></div>
+<div id="usdPerWeek"></div>
+<div id="usdPerMonth"></div>
+<div id="usdPerYear"></div>
 
 
 
