@@ -14,21 +14,166 @@
 </head>
 
 <body>
-    <script>
+    <div class="container-fluid">
+        <div class="row bg-secondary border-bottom">
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p>Device</p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p>Hashrate</p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p>Temp in C</p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p>Accepted</p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p>Rejected</p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="d1"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash1"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp1"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept1"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject1"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p id="d2"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash2"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp2"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept2"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject2"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p id="d3"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash3"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp3"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept3"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject3"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p id="d4"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash4"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp4"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept4"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject4"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p id="d5"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash5"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp5"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept5"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject5"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p id="d6"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash6"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp6"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept6"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject6"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p id="d7"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="hash7"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp7"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="accept7"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="reject7"></p>
+            </div>
+        </div>
+        <div class="row bg-secondary border-top">
+            <div class="col-md-3 text-white text-center fw-bold">
+                <p>Totals</p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="totalHash"></p>
+            </div>
+            <div class="col-md-3 text-center text-white fw-bold">
+                <p id="temp7"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="totalAccept"></p>
+            </div>
+            <div class="col-md-1 text-center text-white fw-bold">
+                <p id="totalReject"></p>
+            </div>
+        </div>
+
+    </div>
 
 
 
 
-    </script>
-
-
-<p id="d1"></p>
-<p id="d2"></p>
-<p id="d3"></p>
-<p id="d4"></p>
-<p id="d5"></p>
-<p id="d6"></p>
-<p id="d7"></p>
 <div id="usdPerDay"></div>
 <div id="usdPerWeek"></div>
 <div id="usdPerMonth"></div>

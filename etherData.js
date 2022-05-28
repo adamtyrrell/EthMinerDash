@@ -5,9 +5,7 @@ const getMinerData = async () => {
         )
         .then((res) => res.json())
         .then((data) => obj = data)
-        console.log(obj.miner.devices[0]);
-
-
+        console.log(obj.miner.devices[1]);
         
     } catch (error) {
         console.log('looks like you messed something up');
@@ -21,7 +19,7 @@ const getMinerData = async () => {
     const device6 = obj.miner.devices[5];
     const device7 = obj.miner.devices[6];
 
-
+//Device Names
     document.getElementById("d1").innerHTML = device1.info;
     document.getElementById("d2").innerHTML = device2.info;
     document.getElementById("d3").innerHTML = device3.info;
@@ -29,6 +27,48 @@ const getMinerData = async () => {
     document.getElementById("d5").innerHTML = device5.info;
     document.getElementById("d6").innerHTML = device6.info;
     document.getElementById("d7").innerHTML = device7.info;
+//Device hashrates
+    document.getElementById("hash1").innerHTML = device1.hashrate;
+    document.getElementById("hash2").innerHTML = device2.hashrate;
+    document.getElementById("hash3").innerHTML = device3.hashrate;
+    document.getElementById("hash4").innerHTML = device4.hashrate;
+    document.getElementById("hash5").innerHTML = device5.hashrate;
+    document.getElementById("hash6").innerHTML = device6.hashrate;
+    document.getElementById("hash7").innerHTML = device7.hashrate;
+
+//Device Temperature
+    document.getElementById("temp1").innerHTML = device1.temperature;
+    document.getElementById("temp2").innerHTML = device2.temperature;
+    document.getElementById("temp3").innerHTML = device3.temperature;
+    document.getElementById("temp4").innerHTML = device4.temperature;
+    document.getElementById("temp5").innerHTML = device5.temperature;
+    document.getElementById("temp6").innerHTML = device6.temperature;
+    document.getElementById("temp7").innerHTML = device7.temperature;
+
+//Accepted Shares
+    document.getElementById("accept1").innerHTML = device1.accepted_shares;
+    document.getElementById("accept2").innerHTML = device2.accepted_shares;
+    document.getElementById("accept3").innerHTML = device3.accepted_shares;
+    document.getElementById("accept4").innerHTML = device4.accepted_shares;
+    document.getElementById("accept5").innerHTML = device5.accepted_shares;
+    document.getElementById("accept6").innerHTML = device6.accepted_shares;
+    document.getElementById("accept7").innerHTML = device7.accepted_shares;
+
+//Rejected Shares
+    document.getElementById("reject1").innerHTML = device1.rejected_shares;
+    document.getElementById("reject2").innerHTML = device2.rejected_shares;
+    document.getElementById("reject3").innerHTML = device3.rejected_shares;
+    document.getElementById("reject4").innerHTML = device4.rejected_shares;
+    document.getElementById("reject5").innerHTML = device5.rejected_shares;
+    document.getElementById("reject6").innerHTML = device6.rejected_shares;
+    document.getElementById("reject7").innerHTML = device7.rejected_shares;
+
+//Totals
+    const totalHash = device1.hashrate_raw + device2.hashrate_raw + device3.hashrate_raw + device4.hashrate_raw + device5.hashrate_raw + device6.hashrate_raw + device7.hashrate_raw;
+    const sTotalHash = String(totalHash)[0] + String(totalHash)[1] + String(totalHash)[2] + '.' + String(totalHash)[3] ;
+document.getElementById("totalHash").innerHTML = sTotalHash;
+
+    setTimeout(getMinerData, 5000);
 } 
 
 
